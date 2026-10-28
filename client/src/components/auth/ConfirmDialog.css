@@ -1,0 +1,98 @@
+/* ── Confirm Dialog ── */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,43,38,0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  padding: 20px;
+  animation: overlay-in 0.15s ease;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.confirm-dialog {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+  animation: dialog-in 0.2s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+  text-align: center;
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.confirm-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.confirm-danger  { background: #FEF2F2; color: #B91C1C; }
+.confirm-warning { background: rgba(212,168,83,0.12); color: #92620A; }
+.confirm-default { background: rgba(11,43,38,0.07); color: #0B2B26; }
+
+.confirm-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0B2B26;
+  margin: 0 0 10px;
+}
+
+.confirm-message {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.confirm-btn-cancel {
+  flex: 1;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1.5px solid #E8E4DC;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.confirm-btn-cancel:hover { border-color: #C5BFB5; background: #F7F4EE; }
+
+.confirm-btn-confirm {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.confirm-btn-confirm:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.confirm-btn-danger  { background: #B91C1C; color: #fff; }
+.confirm-btn-warning { background: #D4A853; color: #0B2B26; }
+.confirm-btn-default { background: #0B2B26; color: #fff; }

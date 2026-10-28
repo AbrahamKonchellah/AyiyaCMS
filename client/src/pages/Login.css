@@ -1,0 +1,205 @@
+/* ── AyiyaCMS Login — aligned to landing page palette ── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #0B2B26 0%, #0f3830 60%, #0B2B26 100%);
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 24px;
+}
+
+.login-card {
+  background: #fff;
+  padding: 40px 36px 36px;
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ── Header ── */
+.login-header {
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.login-logo-mark {
+  width: 34px;
+  height: 34px;
+  background: #0B2B26;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.login-logo-mark svg {
+  display: block;
+}
+
+.login-logo-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0B2B26;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.login-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0B2B26;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.login-header p {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Divider ── */
+.login-divider {
+  width: 36px;
+  height: 2px;
+  background: #D4A853;
+  margin: 16px 0 0;
+}
+
+/* ── Form ── */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0B2B26;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #DDD9D2;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1C1C1C;
+  background: #FDFCFA;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #B0AAA0;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1A5C52;
+  box-shadow: 0 0 0 3px rgba(26, 92, 82, 0.12);
+  background: #fff;
+}
+
+/* ── Submit button ── */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #D4A853;
+  color: #0B2B26;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #C49840;
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:disabled {
+  background: #E8D4A0;
+  color: #8B7340;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Errors ── */
+.error {
+  color: #B91C1C;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.error-banner {
+  background: #FEF2F2;
+  color: #B91C1C;
+  border: 1px solid #FECACA;
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ── Back link ── */
+.link-btn {
+  background: none;
+  border: none;
+  color: #1A5C52;
+  cursor: pointer;
+  margin-top: 14px;
+  font-size: 13px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.link-btn:hover {
+  color: #0B2B26;
+}
+
+/* ── MFA heading (reuses login-header styles) ── */
+.login-card > h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0B2B26;
+  margin: 0 0 8px;
+}
+
+.login-card > p {
+  color: #777;
+  font-size: 14px;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}

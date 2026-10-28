@@ -1,0 +1,61 @@
+/* src/components/matters/TimeTrackingTab.css */
+.time-tracking-tab { padding: 0; }
+
+.stopwatch-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--green-900);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.stopwatch-display {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.stopwatch-controls { display: flex; gap: 8px; }
+.stopwatch-controls .btn-primary { background: var(--gold); color: var(--green-900); }
+.stopwatch-controls .btn-primary:hover { background: #c4974a; }
+.stopwatch-controls .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25); }
+.stopwatch-controls .btn-secondary:hover { background: rgba(255,255,255,0.18); }
+
+.time-entry-form {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+.time-entry-form .form-row:last-child { margin-bottom: 0; }
+.time-entry-form-actions { display: flex; align-items: flex-end; gap: 8px; margin-left: auto; }
+
+.row-actions { display: flex; gap: 2px; justify-content: flex-end; }
+.doc-icon-btn {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border: none; background: none;
+  color: var(--text-soft);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.doc-icon-btn:hover { background: #fff; color: var(--green-700); box-shadow: 0 0 0 1px var(--border); }
+.doc-icon-btn-danger:hover { color: var(--red); }
+
+.time-totals {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--cream);
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+.time-total-item { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--text-soft); }
+.time-total-item strong { font-size: 16px; color: var(--green-900); font-weight: 700; }
+.time-total-highlight strong { color: #92620A; }

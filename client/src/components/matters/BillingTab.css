@@ -1,0 +1,38 @@
+/* src/components/matters/BillingTab.css */
+.billing-tab { padding: 0; }
+
+.billing-generate-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.billing-generate-hint {
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.fee-note-number {
+  font-weight: 600;
+  color: var(--green-900);
+  font-family: var(--font-display);
+}
+.fee-note-total { font-weight: 700; color: var(--green-900); }
+.fee-note-approved-by {
+  font-size: 10.5px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+.row-actions { display: flex; gap: 2px; justify-content: flex-end; }
+.doc-icon-btn {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border: none; background: none;
+  color: var(--text-soft);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.doc-icon-btn:hover { background: var(--cream); color: var(--green-700); box-shadow: 0 0 0 1px var(--border); }

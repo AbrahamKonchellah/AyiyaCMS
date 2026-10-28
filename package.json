@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.1",
+    "@tanstack/react-query": "^5.100.14",
+    "axios": "^1.16.1",
+    "date-fns": "^4.4.0",
+    "react-hook-form": "^7.76.1",
+    "react-pdf": "^10.4.1",
+    "react-router-dom": "^7.16.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0"
+  }
+}

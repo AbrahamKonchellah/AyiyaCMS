@@ -1,0 +1,116 @@
+/* src/components/matters/DocumentPreviewPanel.css */
+.preview-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 43, 38, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.preview-backdrop.open { opacity: 1; pointer-events: auto; }
+
+.preview-panel {
+  position: fixed;
+  top: 0; right: 0;
+  height: 100vh;
+  width: 460px;
+  max-width: 92vw;
+  background: #fff;
+  box-shadow: -12px 0 32px rgba(11, 43, 38, 0.16);
+  z-index: 301;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+.preview-panel.open { transform: translateX(0); }
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+  flex-shrink: 0;
+}
+.preview-header-title { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.preview-icon { font-size: 1.1rem; flex-shrink: 0; }
+.preview-name {
+  font-size: 13.5px; font-weight: 600; color: var(--green-900);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.preview-close {
+  width: 30px; height: 30px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: none; background: none; color: var(--text-soft);
+  border-radius: 4px; cursor: pointer; transition: background 0.12s, color 0.12s;
+}
+.preview-close:hover { background: #fff; color: var(--green-900); box-shadow: 0 0 0 1px var(--border); }
+.preview-close:focus-visible { outline: 2px solid var(--green-700); outline-offset: 1px; }
+
+.preview-body {
+  flex: 1;
+  overflow: auto;
+  background: #F2F0EB;
+  display: flex;
+}
+.preview-frame { width: 100%; height: 100%; border: none; }
+
+.preview-image-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.preview-image { max-width: 100%; max-height: 100%; border-radius: 4px; box-shadow: 0 6px 24px rgba(11, 43, 38, 0.14); }
+
+.preview-state { margin: auto; text-align: center; font-size: 13px; color: var(--text-soft); padding: 32px; }
+.preview-state-error { color: var(--red); }
+.preview-fallback { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.preview-fallback-icon { font-size: 2rem; }
+
+.preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.preview-meta { display: flex; flex-direction: column; gap: 3px; }
+.preview-meta-row { display: flex; gap: 6px; font-size: 11.5px; color: var(--text-soft); }
+.preview-meta-row strong { color: var(--text); font-weight: 600; }
+.preview-download-btn { display: inline-flex; align-items: center; gap: 6px; }
+
+@media (max-width: 768px) {
+  .preview-panel { width: 100vw; max-width: 100vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preview-panel, .preview-backdrop { transition: none; }
+}
+
+/* ── Word document preview (docx-preview) ── */
+.preview-docx-outer {
+  flex: 1;
+  overflow: auto;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+.preview-docx-container {
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(11, 43, 38, 0.14);
+  max-width: 100%;
+}
+/* docx-preview renders its own page-shaped wrapper divs — these overrides
+   keep them from fighting the panel's narrower, scroll-on-overflow layout. */
+.preview-docx-container .docx-wrapper {
+  background: transparent !important;
+  padding: 0 !important;
+}
+.preview-docx-container .docx {
+  max-width: 100% !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,190 @@
+/* ── System Health page ──────────────────────────────── */
+
+.sh-refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sh-refresh-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.sh-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.sh-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: opacity 0.3s;
+}
+
+.sh-card-refreshing {
+  opacity: 0.6;
+}
+
+.sh-card-icon {
+  margin-bottom: 14px;
+  color: var(--text-soft);
+}
+
+.sh-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+
+.sh-card-value {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 4px;
+}
+
+.sh-card-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* ── Section ── */
+.sh-section {
+  margin-bottom: 28px;
+}
+
+.sh-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Service list ── */
+.sh-service-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sh-service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sh-service-row:last-child {
+  border-bottom: none;
+}
+
+.sh-service-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sh-service-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sh-service-detail {
+  font-size: 11.5px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+.sh-status-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.sh-status-badge.ok {
+  background: rgba(26, 92, 82, 0.1);
+  color: var(--green-700);
+}
+
+.sh-status-badge.warn {
+  background: rgba(146, 98, 10, 0.1);
+  color: #92620A;
+}
+
+.sh-status-badge.error {
+  background: rgba(185, 28, 28, 0.1);
+  color: var(--red);
+}
+
+/* ── Sentry card ── */
+.sh-sentry-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sh-sentry-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--text-soft);
+}
+
+.sh-sentry-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.sh-sentry-detail {
+  font-size: 12px;
+  color: var(--text-soft);
+  max-width: 500px;
+}
+
+.sh-sentry-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sh-sentry-link:hover {
+  text-decoration: underline;
+}
