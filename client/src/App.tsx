@@ -20,6 +20,7 @@ import MyCases         from './pages/MyCases';
 import MyInvoices      from './pages/MyInvoices';
 import Billing          from './pages/Billing';
 import Help from './pages/Help';
+import ClauseAnalyser from './pages/ClauseAnalyser';
 
 // Auth
 import LandingPage     from './pages/LandingPage';
@@ -89,6 +90,7 @@ export default function App() {
             <Route path="/documents"    element={<Documents />} />
             <Route path="/time-entries" element={<TimeEntries />} />
             <Route path="/calendar"     element={<Calendar />} />
+            <Route path="/clause-analyser" element={<ClauseAnalyser />} />
             
           </Route>
 

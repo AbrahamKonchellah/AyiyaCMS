@@ -35,6 +35,7 @@ builder.Services.AddSingleton<SystemHealthCommand>();
 builder.Services.AddScoped<AuditService>();
 builder.Services.AddHostedService<DeadlineReminderJob>();
 builder.Services.AddHttpClient<ISmsService, AfricasTalkingSmsService>();
+builder.Services.AddHttpClient<MlClient>();   // clause-analysis service (ml-service/)
 builder.Services.Configure<AfricasTalkingSettings>(
 builder.Configuration.GetSection(AfricasTalkingSettings.SectionName));
 builder.Services.AddScoped<MatterNoteCommand>();
@@ -191,4 +192,34 @@ catch (Exception ex)
         "Could not configure Meilisearch index at startup: {Message}", ex.Message);
 }
 
+// TEMPORARY: seed first admin. Delete after first login.
+using (var seedScope = app.Services.CreateScope())
+{
+    var db = seedScope.ServiceProvider.GetRequiredService<AppDbContext>();
+    var email = app.Configuration["Seed:AdminEmail"];
+    var password = app.Configuration["Seed:AdminPassword"];
+
+    if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password)
+        && !await db.Users.AnyAsync(u => u.Role == "Admin"))
+    {
+        db.Users.Add(new AyiyaCMS.Domain.Entities.User
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "System",
+            LastName = "Admin",
+            Email = email.ToLower().Trim(),
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password),
+            Role = "Admin",
+            IsActive = true,
+            MustChangePassword = true,
+            MfaEnabled = false,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        });
+        await db.SaveChangesAsync();
+        app.Logger.LogInformation("Seeded initial admin {Email}", email);
+    }
+}
+
+ 
 app.Run();
